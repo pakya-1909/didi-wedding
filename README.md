@@ -53,10 +53,14 @@ Live site (after deploy): `https://pakya-1909.github.io/didi-wedding/`
 ### One-time GitHub setup
 
 1. Push all project files to the `main` branch (see commands below).
-2. On GitHub, open the repo → **Settings** → **Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions** (not “Deploy from a branch”).
+2. Wait for the **Deploy to GitHub Pages** workflow to finish (it pushes a `gh-pages` branch).
+3. On GitHub, open the repo → **Settings** → **Pages**.
+4. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+5. Choose branch **`gh-pages`**, folder **`/ (root)`**, then **Save**.
 
 After that, every push to `main` rebuilds and publishes the site automatically.
+
+If a previous deploy failed with “Failed to create deployment (404)”, ignore **GitHub Actions** as the Pages source — use the **`gh-pages` branch** steps above instead.
 
 ### Push your code (first time)
 
