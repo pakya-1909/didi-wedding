@@ -20,27 +20,39 @@ export default function GuestForm() {
 
   return (
     <section id="guest-form" className="section">
-      <h2>Guest Details Form</h2>
-      <p>Please share your details so we can plan better. Responses are saved to a Google Sheet you can export as Excel.</p>
+      <div className="guest-form-header">
+        <p className="eyebrow">RSVP Details</p>
+        <h2>Share Your Guest Details</h2>
+        <p>
+          Please fill this quick form so we can plan seating, food, and event arrangements. Responses are saved directly
+          to a Google Sheet.
+        </p>
+      </div>
 
-      <iframe
-        className="google-form-embed"
-        title="Wedding guest details form"
-        src={embedUrl}
-        width="100%"
-        height="1100"
-        frameBorder="0"
-        marginHeight={0}
-        marginWidth={0}
-      >
-        Loading form…
-      </iframe>
+      <div className="google-form-card">
+        <div className="google-form-card-top">
+          <div>
+            <p className="google-form-kicker">Wedding Guest Form</p>
+            <strong>Didi & Partner Wedding Celebration</strong>
+          </div>
+          <a className="google-form-button" href={viewUrl} target="_blank" rel="noopener noreferrer">
+            Open Full Form
+          </a>
+        </div>
 
-      <p className="google-form-fallback">
-        <a href={viewUrl} target="_blank" rel="noopener noreferrer">
-          Open form in a new tab
-        </a>
-      </p>
+        <iframe
+          className="google-form-embed"
+          title="Wedding guest details form"
+          src={embedUrl}
+          width="100%"
+          height="980"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
+        >
+          Loading form...
+        </iframe>
+      </div>
     </section>
   );
 }

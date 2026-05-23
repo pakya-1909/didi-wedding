@@ -1,3 +1,7 @@
+import haldiImage from "../images/haldi_function.webp";
+import mehendiImage from "../images/mehendi_function.jpeg";
+import sangeetImage from "../images/sangeet_function.webp";
+
 export type WeddingEvent = {
   id: string;
   title: string;
@@ -5,6 +9,7 @@ export type WeddingEvent = {
   time: string;
   venue: string;
   description: string;
+  image?: string;
   dressCode?: string;
   mapLink?: string;
 };
@@ -17,6 +22,7 @@ export const weddingEvents: WeddingEvent[] = [
     time: "10:30 AM",
     venue: "Family House Courtyard",
     description: "A bright and joyful turmeric ceremony with close family and friends.",
+    image: haldiImage,
     dressCode: "Yellow or pastel shades"
   },
   {
@@ -26,6 +32,7 @@ export const weddingEvents: WeddingEvent[] = [
     time: "6:00 PM",
     venue: "Sunset Lawn",
     description: "Henna, music, dance, and an evening full of celebration.",
+    image: mehendiImage,
     dressCode: "Festive ethnic"
   },
   {
@@ -35,6 +42,7 @@ export const weddingEvents: WeddingEvent[] = [
     time: "7:30 PM",
     venue: "Grand Ballroom",
     description: "Dance performances and dinner with both families.",
+    image: sangeetImage,
     mapLink: "https://maps.google.com"
   },
   {

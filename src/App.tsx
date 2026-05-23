@@ -1,28 +1,26 @@
 import EventCard from "./components/EventCard";
 import GuestForm from "./components/GuestForm";
 import { weddingEvents } from "./data/events";
-
-const heroLinks = [
-  { label: "Events", href: "#events" },
-  { label: "Guest Form", href: "#guest-form" }
-];
+import invitationBackground from "./images/thumbnail.webp";
 
 export default function App() {
   return (
     <div className="app">
       <header className="hero section">
-        <p className="tagline">Together with their families</p>
-        <h1>Didi & Partner Wedding Celebration</h1>
-        <p className="hero-text">
-          We are excited to celebrate with you. Explore all wedding functions below and share your details in the guest form.
-        </p>
-        <nav className="hero-actions" aria-label="Page sections">
-          {heroLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div
+          className="invitation-card"
+          style={{
+            backgroundImage: `url(${invitationBackground})`
+          }}
+          aria-label="Wedding invitation"
+        >
+          <div className="invitation-text">
+            <p className="invitation-kicker">Wedding Invitation</p>
+            <h2>Didi & Partner</h2>
+            <p className="invitation-date">20 - 22 November 2026</p>
+            <p>With joy in our hearts, we request your gracious presence at the wedding celebration.</p>
+          </div>
+        </div>
       </header>
 
       <main>
