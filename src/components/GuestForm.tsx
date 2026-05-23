@@ -24,8 +24,7 @@ export default function GuestForm() {
         <p className="eyebrow">RSVP Details</p>
         <h2>Share Your Guest Details</h2>
         <p>
-          Please fill this quick form so we can plan seating, food, and event arrangements. Responses are saved directly
-          to a Google Sheet.
+          Please fill this quick form so we can plan seating, food, and event arrangements
         </p>
       </div>
 

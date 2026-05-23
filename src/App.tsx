@@ -16,19 +16,15 @@ export default function App() {
         >
           <div className="invitation-text">
             <p className="invitation-kicker">Wedding Invitation</p>
-            <h2>Didi & Partner</h2>
-            <p className="invitation-date">20 - 22 November 2026</p>
+            <h5>Didi & Partner</h5>
+            <p className="invitation-date">21 - 22 November 2026</p>
             <p>With joy in our hearts, we request your gracious presence at the wedding celebration.</p>
           </div>
         </div>
       </header>
 
       <main>
-        <section id="events" className="section">
-          <h2>Wedding Functions</h2>
-          <p className="section-intro">
-            This section is fully dynamic. Update the events list in <code>src/data/events.ts</code> to add or remove any function.
-          </p>
+        <section id="events" className="section events-section">
           <div className="event-grid">
             {weddingEvents.map((event) => (
               <EventCard key={event.id} event={event} />

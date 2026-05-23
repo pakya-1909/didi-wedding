@@ -47,6 +47,7 @@ a {
 
 .hero {
   display: grid;
+  justify-items: center;
   gap: 1.25rem;
   overflow: hidden;
   padding: 0;
@@ -57,6 +58,12 @@ a {
 
 .hero-content {
   align-self: center;
+}
+
+.events-section {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .hero h1 {
@@ -110,25 +117,12 @@ button:disabled {
   display: grid;
   place-items: center;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  min-height: 280px;
+  max-width: min(100%, 520px);
+  aspect-ratio: 9 / 16;
   overflow: hidden;
-  border: 1px solid rgb(255 255 255 / 0.5);
-  border-radius: 1.25rem;
-  background-color: #fff7f3;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25), 0 18px 45px rgb(111 31 72 / 0.16);
-}
-
-.invitation-card::before {
-  content: "";
-  position: absolute;
-  inset: 0.9rem;
-  border: 1px solid rgb(255 255 255 / 0.55);
-  border-radius: 0.75rem;
-  pointer-events: none;
 }
 
 .invitation-text {
@@ -137,45 +131,58 @@ button:disabled {
   margin: clamp(1rem, 4vw, 2rem);
   padding: clamp(1rem, 3vw, 1.45rem);
   text-align: center;
+  color: #3b1f12;
+  text-shadow: 0 2px 10px rgb(255 255 255 / 0.9);
 }
 
 .invitation-kicker {
   margin: 0;
-  color: var(--accent);
-  font-size: 0.78rem;
+  color: #9f2b68;
+  font-size: 0.76rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.invitation-text h2 {
-  margin: 0.35rem 0;
-  color: #3a1528;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  line-height: 1;
+.invitation-text h5 {
+  margin: 0.35rem 0 0.25rem;
+  color: #7d263f;
+  font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+  font-size: clamp(2.25rem, 8vw, 4rem);
+  font-weight: 500;
+  line-height: 0.95;
 }
 
 .invitation-text p {
   margin: 0.55rem 0 0;
+  font-weight: 600;
 }
 
 .invitation-date {
-  color: var(--accent-dark);
+  display: inline-block;
+  padding: 0.28rem 0.85rem;
+  border: 1px solid rgb(125 38 63 / 0.24);
+  border-radius: 999px;
+  background: rgb(255 248 241 / 0.72);
+  color: #5d311b;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  box-shadow: 0 8px 20px rgb(125 38 63 / 0.08);
 }
 
 .event-grid {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   gap: 1.25rem;
 }
 
 .event-card {
   position: relative;
   display: block;
+  width: fit-content;
+  max-width: min(100%, 520px);
   overflow: hidden;
 }
 
@@ -199,27 +206,62 @@ button:disabled {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: translateY(-5rem);
   width: 100%;
-  color: #000;
+  color: #3b1f12;
+  text-shadow: 0 2px 8px rgb(255 255 255 / 0.85);
 }
 
 .event-card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.45rem;
+  color: #7d263f;
+  font-family: "Brush Script MT", "Segoe Script", "Lucida Handwriting", cursive;
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  font-weight: 500;
+  line-height: 0.95;
 }
 
 .event-meta {
-  color: #000;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
   margin: 0.35rem 0;
+  color: #5d311b;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.event-time,
+.event-venue {
+  margin: 0.35rem 0;
+  padding: 0.28rem 0.85rem;
+  border: 1px solid rgb(125 38 63 / 0.25);
+  border-radius: 999px;
+  background: rgb(255 248 241 / 0.72);
+  color: #3b1f12;
   font-size: 0.95rem;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgb(125 38 63 / 0.08);
 }
 
 .event-venue {
-  font-weight: 600;
+  max-width: min(82%, 360px);
+}
+
+.event-location-link {
+  margin-top: 0.45rem;
+  border-radius: 999px;
+  padding: 0.42rem 0.95rem;
+  background: linear-gradient(135deg, #9f2b68, #c46a3a);
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-shadow: none;
+  box-shadow: 0 10px 24px rgb(111 31 72 / 0.25);
 }
 
 .guest-form-header {
@@ -314,10 +356,6 @@ button:disabled {
 @media (min-width: 760px) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .event-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .google-form-card-top {

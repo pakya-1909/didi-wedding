@@ -20,13 +20,13 @@ export default function EventCard({ event }: EventCardProps) {
         <h3>{event.title}</h3>
         <p className="event-meta">
           <span>{formatDate(event.date)}</span>
-          <span>{event.time}</span>
         </p>
-        <p className="event-venue">{event.venue}</p>
-        <p>{event.description}</p>
-        {event.dressCode ? <p className="event-meta">Dress code: {event.dressCode}</p> : null}
+        <p className="event-time">
+          <span>Timing: {event.time}</span>
+        </p>
+        <p className="event-venue">Venue: {event.venue}</p>
         {event.mapLink ? (
-          <a href={event.mapLink} target="_blank" rel="noreferrer">
+          <a className="event-location-link" href={event.mapLink} target="_blank" rel="noreferrer">
             View location
           </a>
         ) : null}
