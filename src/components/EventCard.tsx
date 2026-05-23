@@ -13,6 +13,22 @@ const formatDate = (dateValue: string): string =>
   });
 
 export default function EventCard({ event }: EventCardProps) {
+  if (event.invitationDetails) {
+    return (
+      <article className={event.image ? "event-card event-card-with-image" : "event-card"}>
+        {event.image ? <img className="event-card-image" src={event.image} alt={`${event.title} decoration`} /> : null}
+        <div className="event-card-content invitation-event-content">
+          <p className="invitation-event-intro">{event.invitationDetails.intro}</p>
+          <h3>{event.invitationDetails.groom}</h3>
+          <p className="invitation-event-family">{event.invitationDetails.groomParents}</p>
+          <p className="invitation-event-weds">weds</p>
+          <h3>{event.invitationDetails.bride}</h3>
+          <p className="invitation-event-family">{event.invitationDetails.brideParents}</p>
+        </div>
+      </article>
+    );
+  }
+
   return (
     <article className={event.image ? "event-card event-card-with-image" : "event-card"}>
       {event.image ? <img className="event-card-image" src={event.image} alt={`${event.title} decoration`} /> : null}

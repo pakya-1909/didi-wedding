@@ -1,21 +1,43 @@
-import haldiImage from "../images/haldi_function.webp";
+import haldiImage from "../images/haldi_function.jpeg";
 import sangeetImage from "../images/sangeet_function.webp";
-import weddingImage from "../images/wedding.jpeg";
-import mehendiImage2 from "../images/mehendi_function.webp";
+import weddingImage from "../images/wedding.webp";
+import invitationImage from "../images/wedding_invitation.webp";
+
 
 export type WeddingEvent = {
   id: string;
   title: string;
   date: string;
   time: string;
-  venue: string;
+  venue?: string;
   description?: string;
   image?: string;
   dressCode?: string;
   mapLink?: string;
+  invitationDetails?: {
+    intro: string;
+    groom: string;
+    groomParents: string;
+    bride: string;
+    brideParents: string;
+  };
 };
 
 export const weddingEvents: WeddingEvent[] = [
+  {
+    id: "invitation",
+    title: "Invitation",
+    date: "2026-11-20",
+    time: "10:00 AM",
+    image: invitationImage,
+    invitationDetails: {
+      intro: "We request the honour of your gracious presence to the wedding of",
+      groom: "Dr. Satyam",
+      groomParents: "son of Smt. Mamta Verma & Shri Rajive Raten Verma",
+      bride: "Dr. Priyanka",
+      brideParents: "daughter of Smt. Meera & Shri Rajjan"
+    }
+  },
   {
     id: "haldi",
     title: "Haldi Ceremony",
@@ -26,16 +48,6 @@ export const weddingEvents: WeddingEvent[] = [
     image: haldiImage,
     // dressCode: "Yellow or pastel shades",
     mapLink: "https://share.google/AiWlUpbO9el3wMYz3"
-  },
-  {
-    id: "mehendi",
-    title: "Mehendi",
-    date: "2026-11-20",
-    time: "6:00 PM",
-    venue: "SAS One Farms",
-    // description: "Henna, music, dance, and an evening full of celebration.",
-    image: mehendiImage2,
-    // dressCode: "Festive ethnic"
   },
   {
     id: "sangeet",
@@ -51,7 +63,7 @@ export const weddingEvents: WeddingEvent[] = [
     id: "wedding",
     title: "Wedding Ceremony",
     date: "2026-11-22",
-    time: "4:00 PM",
+    time: "4:00 PM Onwards",
     venue: "SAS One Farms",
     // description: "Traditional wedding rituals followed by dinner reception.",
     image: weddingImage,

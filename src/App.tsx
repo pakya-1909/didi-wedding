@@ -15,10 +15,9 @@ export default function App() {
           aria-label="Wedding invitation"
         >
           <div className="invitation-text">
-            <p className="invitation-kicker">Wedding Invitation</p>
-            <h5>Didi & Partner</h5>
-            <p className="invitation-date">21 - 22 November 2026</p>
-            <p>With joy in our hearts, we request your gracious presence at the wedding celebration.</p>
+            <h5>श्री गणेशाय नमः</h5>
+            <p className="invitation-date">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ</p>
+            <p className="invitation-date">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा</p>
           </div>
         </div>
       </header>

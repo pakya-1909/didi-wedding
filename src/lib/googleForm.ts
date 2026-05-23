@@ -19,3 +19,10 @@ export const toGoogleFormViewUrl = (formUrl: string): string => {
   url.searchParams.delete("embedded");
   return url.toString();
 };
+
+export const toGoogleFormResponseUrl = (formUrl: string): string => {
+  const url = new URL(formUrl);
+  url.pathname = url.pathname.replace(/\/viewform$/, "/formResponse");
+  url.search = "";
+  return url.toString();
+};
