@@ -1,5 +1,4 @@
 import haldiImage from "../images/haldi_function.webp";
-import mehendiImage from "../images/mehendi_function.jpeg";
 import sangeetImage from "../images/sangeet_function.webp";
 import weddingImage from "../images/wedding.jpeg";
 import mehendiImage2 from "../images/mehendi_function.webp";
